@@ -1,25 +1,24 @@
-﻿namespace APPSistemaVet
+﻿using System.Diagnostics.Tracing;
+
+namespace APPSistemaVet
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
         }
-
-        private void OnCounterClicked(object sender, EventArgs e)
+        
+        private void OnLoginClicked(object sender, EventArgs e)
         {
-            count++;
+            char Entry = etrLogin.Text;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if (etrLogin == "ERROR")
+                LoginBtn.Text = $"Clicked {entry} in software";
             else
-                CounterBtn.Text = $"Clicked {count} times";
+             LoginBtn.Text = $"Clicked {count} times";
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            SemanticScreenReader.Announce(LoginBtn.Text);
         }
     }
-
 }
